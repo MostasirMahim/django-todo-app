@@ -33,11 +33,13 @@
     </div>
     
     <div class="input-area my-4">
+       <form action="{% url 'addTask' %}" method="POST">
+        {% csrf_token %}
       <div class="input-group">
-        <input id="new-task" type="text" class="form-control" placeholder="Add a task (static)" aria-label="New task">
-        <button id="add-btn" class="btn btn-primary" type="button">Add</button>
+        <input id="new-task" type="text" name="task" class="form-control" placeholder="Add a task (static)" aria-label="New task">
+        <button id="add-btn" class="btn btn-primary" type="submit">Add</button>
       </div>
-    </div>
+       </form>
   </div>
 
   <div class="col-md-4">
