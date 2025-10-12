@@ -19,8 +19,9 @@
     <p class="text-muted">12th October 2025</p>
 
     <div class="task-list list-group">
+        {% for task in incomplete_task %}
       <div class="list-group-item d-flex justify-content-between align-items-center">
-        Buy groceries
+        {{ task.title }}
         <div>
           <button class="btn btn-sm btn-success me-1"><i class="fa fa-check"></i></button>
           <button class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></button>
@@ -28,13 +29,7 @@
 
         </div>
       </div>
-      <div class="list-group-item d-flex justify-content-between align-items-center">
-        Walk the dog
-        <div>
-          <button class="btn btn-sm btn-success me-1"><i class="fa fa-check"></i></button>
-          <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
-        </div>
-      </div>
+        {% endfor %}
     </div>
     
     <div class="input-area my-4">
@@ -47,12 +42,17 @@
 
   <div class="col-md-4">
     <h5>Completed</h5>
+
     <div class="list-group my-5 border">
+    {% for task in completed_task %}
       <div class="list-group-item d-flex justify-content-between align-items-center">
-        Call Alice
+        {{ task.title }}
         <button class="btn btn-sm btn-outline-secondary"><i class="fa fa-undo"></i></button>
       </div>
+    {% endfor %}
     </div>
+ 
+
   </div>
 </div>
 </body>
