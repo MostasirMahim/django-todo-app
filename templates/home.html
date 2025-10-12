@@ -16,12 +16,16 @@
    <div class="row g-3">
   <div class="col-md-8">
     <h5>Tasks</h5>
+    <p class="text-muted">12th October 2025</p>
+
     <div class="task-list list-group">
       <div class="list-group-item d-flex justify-content-between align-items-center">
         Buy groceries
         <div>
           <button class="btn btn-sm btn-success me-1"><i class="fa fa-check"></i></button>
+          <button class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></button>
           <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+
         </div>
       </div>
       <div class="list-group-item d-flex justify-content-between align-items-center">
@@ -32,11 +36,18 @@
         </div>
       </div>
     </div>
+    
+    <div class="input-area my-4">
+      <div class="input-group">
+        <input id="new-task" type="text" class="form-control" placeholder="Add a task (static)" aria-label="New task">
+        <button id="add-btn" class="btn btn-primary" type="button">Add</button>
+      </div>
+    </div>
   </div>
 
   <div class="col-md-4">
     <h5>Completed</h5>
-    <div class="list-group">
+    <div class="list-group my-5 border">
       <div class="list-group-item d-flex justify-content-between align-items-center">
         Call Alice
         <button class="btn btn-sm btn-outline-secondary"><i class="fa fa-undo"></i></button>
