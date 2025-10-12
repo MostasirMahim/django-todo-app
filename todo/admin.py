@@ -5,9 +5,12 @@ from django.contrib import admin
 from .models import Todo
 
 
-#display list
+
 
 class TodoAdmin(admin.ModelAdmin):
+    #display list
     list_display = ('title', 'is_completed', 'created_at', 'updated_at')
+    #search list
+    search_fields = ('title',)
 
 admin.site.register(Todo, TodoAdmin)
