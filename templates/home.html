@@ -21,7 +21,7 @@
     <div class="task-list list-group">
         {% for task in incomplete_task %}
       <div class="list-group-item d-flex justify-content-between align-items-center">
-        {{ task.title }}
+        {{ task.title }} -ID : {{ task.pk }}
         <div>
           <button class="btn btn-sm btn-success me-1"><i class="fa fa-check"></i></button>
           <button class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></button>
@@ -48,7 +48,7 @@
     <div class="list-group my-5 border">
     {% for task in completed_task %}
       <div class="list-group-item d-flex justify-content-between align-items-center">
-        {{ task.title }}
+        {{ task.title }} -ID : {{ task.pk }}
         <button class="btn btn-sm btn-outline-secondary"><i class="fa fa-undo"></i></button>
       </div>
     {% endfor %}
