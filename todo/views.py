@@ -36,3 +36,8 @@ def updatetask(request, todo_id):
             "todo" : todo
         }
         return render(request, "edit_todo.html", context)
+
+def deleteTask(request, todo_id):
+    todo = get_object_or_404(Todo, pk=todo_id)
+    todo.delete()
+    return redirect('home')
