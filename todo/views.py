@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from .models import Todo
 
@@ -22,3 +22,17 @@ def markUnComplete(request, todo_id):
     todo.is_completed = False
     todo.save()
     return redirect('home')
+
+def updatetask(request, todo_id):
+    todo = get_object_or_404(Todo, pk=todo_id)
+
+    if request.method == 'POST':
+        new_task = request.POST['newtask']
+        todo.title = new_task
+        todo.save()
+        return redirect("home")
+    else:
+        context = {
+            "todo" : todo
+        }
+        return render(request, "edit_todo.html", context)
