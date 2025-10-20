@@ -7,7 +7,6 @@
 </head>
 <body>
     {{ todo.title }} -ID : {{ todo.pk }}
-
         <div class="input-area my-4">
        <form action="{% url 'editTask' todo.pk %}" method="POST">
         {% csrf_token %}
